@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:title" content="Incuvers 인큐버스" />
+    <meta property="og:description" content="인큐버스는 핀테크 서비스, 플랫폼 서비스, 비대면 서비스를 제공 및 관리하는 회사입니다." />
+    <meta property="og:image" content="./images/testpage.jpg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+KR:wght@700&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-ico">      
+    <title>인큐버스</title>
+    <script src="https://kit.fontawesome.com/0d707ca2ca.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+
+</head>
+
+
+<!-- 불펌방지 태그 순서대로 우클릭 방지, 블록 선택 방지, 드래그 방지 -->
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+    <header class="header">
+        <!-- 네비게이션바 -->
+        <nav class="navbar">
+            <!-- 로고 -->
+            <div class="navbar_logo">
+                <!-- 로고아이콘 -->
+                <a href="index.html"><img class="logo_image" src="./images/main-logo.png"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="title"><h2>통합코드 생성 시스템</h2></div>
+
+    <div class="file-upload">
+        <form method="post" action="upload-multiple.php" enctype="multipart/form-data" >
+            <a>파일업로드(전기,가스,통합신청2)</a><br>
+            <input type="file" name="upload[]" multiple accept=".xls,.xlsx" onchange="addFile(this);"><br><br>
+            <input type="submit" value="send">
+        </form>
+    </div>
+
+    <div class="insert">
+        <form method="POST" onsubmit="return false;" enctype="multipart/form-data">
+            <input type="file" onchange="addFile(this);" multiple />
+            <div class="file-list"></div>
+        </form>
+    </div>
+    
+    
+
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,313 @@
+:root {
+    /* --text-color: #F04B24; */
+    --text-color: black;
+    --background-color: rgb(255, 255, 255, 0.5);
+    /* --background-color: white; */
+    --accent-color: #f2d8d8;
+    --footer-color: darkgray;
+    --hover-color: rgb(255, 175, 143, 0.4);
+    /* --hover-color: rgb(242, 216, 216, 0.5); */
+}
+
+
+body {
+    font-family: 'capitana', 'nanum-gothic';
+    font-size: 16px;
+    line-height: 30px;
+    color: #0d1012;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    word-break: keep-all;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.logo_text {
+    font-size: 24px;
+    font-weight: 50;
+    padding-top: 25px;
+}
+
+.navbar {
+    /* 한줄에 나란히 설정 */
+    display: flex;
+    /* 일정한 간격에 맞춰서 박스를 정렬 */
+    justify-content: space-between;
+    /* 수직 정렬 설정 */
+    align-items: center;
+    background-color: var(--background-color);
+    z-index: 10;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    padding: 8px 12px;
+}
+
+.navbar_logo {
+    font-size: 24px;
+    color: white;
+    padding-left: 15px;
+    /* padding-top: 5px; */
+    display: block;
+    /* width: 150px; */
+    justify-content: center;
+    align-items: center;
+    
+  
+
+}
+.logo_image{
+    max-width: 100%;
+    width: 130px;
+    /* height: 100%; */
+
+    padding: 5px 10px;
+
+  
+
+}
+
+.navbar_logo i {
+    color: var(--accent-color);
+}
+
+.navbar_menu {
+    font-family: 'capitana-light';
+    display: flex;
+    /* 리스트 앞에 불릿 없애기 */
+    list-style: none;
+    padding-left: 0;
+    padding-right: 50px
+}
+
+.navbar_menu li {
+    /* 여기서 패딩으로 넣는 이유는 박스 안에 넣어서 클릭할 수 있는 영역이 커진다 */
+    padding: 8px 25px;
+}
+
+.navbar_menu li:hover {
+    background-color: var(--hover-color);
+    border-radius: 4px;
+}
+
+
+/* .navbar_links {
+    display: flex;
+    list-style: none;
+    color: var(--text-color);
+    padding-left: 0;
+
+}
+.navbar_links li {
+    padding: 8px 12px;
+
+}
+.navbar_links li:hover {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+
+
+} */
+
+
+.navbar_toggleBtn {
+    display: none;
+    position: absolute;
+    right: 50px;
+    font-size: 25px;
+    color: var(--text-color);
+    padding-top: 10px;
+}
+
+.navbar_toggleBtn :hover {
+    color: var(--accent-color);
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+}
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+
+
+/* 반응형 */
+@media screen and (max-width: 413px){
+    .footer_info_section > div, 
+    .company_profile > div {
+        max-width: calc(100% - 44px);
+    }
+}
+
+@media screen and (max-width: 758px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 50px;
+    }
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* .navbar_links {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    } */
+
+    .navbar_toggleBtn {
+        display: flex;
+    }
+
+    .navbar_menu.active,
+    .navbar_links.active {
+        display: flex;
+    }
+    .company_profile {
+        padding: 53px 0;
+    }
+    .company_profile h2 {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 40px;
+    }
+    .company_profile p {
+        font-size: 16px;
+    }
+    .company_profile > div {
+        display: block;
+    }
+
+    .footer_info_section {
+        padding: 76px 0 104px;
+    }
+
+    .footer_logo {
+        width: 126px;
+        margin-bottom: 42px;
+    }
+
+    .footer_contact_info {
+        display: block;
+    }
+
+
+    .footer_info_section > div {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+  
+@media screen and (max-width: 1024px) {
+        .company_profile {
+            padding: 157px 0;
+        }
+        .footer_info_section > div, 
+        .company_profile > div {
+            max-width: calc(100% - 96px);
+        }
+        .company_profile button {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+        }
+
+}
+
+
+/* 폰트 */
+
+/* 한글 폰트 */
+@font-face {
+    font-family: nanum-gothic;
+    src: url("../fonts/nanum-gothic/NanumGothic.otf");
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: nanum-gothicBold;
+    src: url("../fonts/nanum-gothic/NanumGothicBold.otf");
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: nanum-gothicExtraBold;
+    src: url("../fonts/nanum-gothic/NanumGothicExtraBold.otf");
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: nanum-gothicLight;
+    src: url("../fonts/nanum-gothic/NanumGothicLight.otf");
+    unicode-range: U+AC00-D7A3;
+}
+
+/* 영어 폰트 */
+@font-face {
+    font-family: capitana-bold;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-bold.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-semibold;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-semibold.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-extrabold;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-extrabold.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-extralight;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-extralight.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-light;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-light.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-medium;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-medium.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-regular;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-regular.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: capitana-thin;
+    src: url("../fonts/capitana-fonts/Fontspring-DEMO-capitana-thin.otf");
+    unicode-range: U+0041-005A, U+0061-007A;
+}
