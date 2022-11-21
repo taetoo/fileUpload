@@ -1,16 +1,9 @@
-const href = location.href;
-    const queryString = href.substring(href.indexOf("?") + 1)
-    if (queryString === 'error') {
-        const errorDiv = document.getElementById('login-failed');
-        errorDiv.style.display = 'block';
-    }
-
     var fileNo = 0;
     var filesArr = new Array();
     
     /* 첨부파일 추가 */
     function addFile(obj){
-        var maxFileCnt = 2;   // 첨부파일 최대 개수
+        var maxFileCnt = 3;   // 첨부파일 최대 개수
         var attFileCnt = document.querySelectorAll('.filebox').length;    // 기존 추가된 첨부파일 개수
         var remainFileCnt = maxFileCnt - attFileCnt;    // 추가로 첨부가능한 개수
         var curFileCnt = obj.files.length;  // 현재 선택된 첨부파일 개수
@@ -18,6 +11,7 @@ const href = location.href;
         // 첨부파일 개수 확인
         if (curFileCnt > remainFileCnt) {
             alert("첨부파일은 최대 " + maxFileCnt + "개 까지 첨부 가능합니다.");
+            location.reload();
         }
     
         for (var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
@@ -61,10 +55,9 @@ const href = location.href;
                 formData.append("attach_file", filesArr[i]);
             }
         }
-    
         $.ajax({
             method: 'POST',
-            url: '/register',
+            url: '/excel/upload',
             dataType: 'json',
             data: formData,
             async: true,
