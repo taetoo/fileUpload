@@ -1,0 +1,25 @@
+.navbar_logo {
+    font-size: 24px;
+    color: white;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo_image{
+    max-width: 100%;
+    width: 200px;
+    /* padding: 5px 10px; */
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

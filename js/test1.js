@@ -72,5 +72,10 @@
                 return;
             }
         })
+        
+        function show_progress() {
+            return $('progress-bar').show()
+        }
+
 
 }
