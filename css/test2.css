@@ -1,3 +1,23 @@
+.navbar_logo {
+    font-size: 24px;
+    color: white;
+    padding-left: 15px;
+    padding-top: 15px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.logo_image{
+    max-width: 100%;
+    width: 130px;
+    padding: 5px 10px;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
 .insert {
     padding: 20px 30px;
     display: block;

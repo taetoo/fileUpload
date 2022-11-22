@@ -8,7 +8,15 @@
     <script src="./js/test2.js" defer></script>
 	<link rel="stylesheet" href="./css/test2.css">
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+	<div class="navbar_logo">
+		<!-- 로고아이콘 -->
+		<a><img class="logo_image" src="./images/main-logo.png"></a>
+	</div>
+<h1 class="title">
+	통합코드 생성 시스템
+</h1>
 	<div class="insert">
 		<form method="POST" action="/excel/upload" onsubmit="return false;" enctype="multipart/form-data">
 			<input type="file" onchange="addFile(this);" multiple accept=".xls,.xlsx" />
