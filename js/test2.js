@@ -81,15 +81,61 @@ function submitForm() {
         dataType: 'json',
         data: formData,
         async: true,
-        // timeout: 30000,
+        timeout: 30000,
         cache: false,
         headers: {'cache-control': 'no-cache', 'pragma': 'no-cache'},
         success: function () {
             alert("파일업로드 성공");
         },
+		beforeSend: function (){  
+			$("#progress-top").show(); //프로그래스 바
+		},
+		complete : function (){
+			$("#progress-top").hide(); //프로그래스 바
+		},
         error: function (xhr, desc, err) {
             alert('에러가 발생 하였습니다.');
             return;
         }
     })
 }
+$(function(){	
+		$("#btn").on("click", function(){
+			console.log("click Time : " + new Date);
+			
+			var form = $("#fileForm")[0];
+			var formData = new FormData(form);
+			$.ajax({
+				type: "POST",
+				enctype: 'multipart/form-data',
+				url: "/excel/upload",
+				data: formData,
+				processData: false,
+				contentType: false,
+				cache: false,
+				xhr: function(){
+					var xhr = $.ajaxSettings.xhr();
+					xhr.upload.onprogress = function(e){
+						var per = e.loaded * 100 / e.total;
+						progressBar(per);
+					};
+					return xhr;
+				},
+				success: function (data) {
+					console.log("SUCCESS : ", data);
+				},
+				error: function (e) {
+					console.log("ERROR : ", e);
+				}
+			});
+		});
+	});
+	
+	function progressBar(per){
+		if(per > 55){
+			$(".progressPer").css("color", "#000");
+		}
+		per = per.toFixed(1);
+		$(".progressPer").text(per+" %");
+		$(".progressNow").css("width", "calc(" + per + "% - 20px)");
+	}

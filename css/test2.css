@@ -24,3 +24,16 @@
     color: #ff5353;
     margin-left: 5px;
 }
+.progress-top {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+*{margin:0;padding:0}
+	.progressContainer{display: flex; position:absolute; width: 450px;padding:20px 10px;border: 1px solid #eee; margin-top: 15px;background:#000;height:20px; align-items: center; justify-content: center;}
+	.progress{position:absolute;width: calc(100% - 20px);height: 20px;}
+	.progressTotal{background: #5D5D5D;border-radius: 10px;}
+	.progressNow{width: calc(0% - 20px);background: #FFF;border-radius: 10px;}
+	.progressPer{background: transparent; text-align:center;color:#A6A6A6;}
