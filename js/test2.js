@@ -81,7 +81,7 @@ function submitForm() {
         dataType: 'json',
         data: formData,
         async: true,
-        timeout: 30000,
+        // timeout: 30000,
         cache: false,
         headers: {'cache-control': 'no-cache', 'pragma': 'no-cache'},
         success: function () {
