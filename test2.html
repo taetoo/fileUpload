@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>통합코드 생성</title>
+    <script src="./js/test2.js" defer></script>
+	<link rel="stylesheet" href="/css/test2.css">
+</head>
+<body>
+	<div class="insert">
+		<form method="POST" action="/excel/upload" onsubmit="return false;" enctype="multipart/form-data">
+			<input type="file" onchange="addFile(this);" multiple accept=".xls,.xlsx" />
+			<input type="submit" value="send" onchange="submitForm(this)">
+			<div class="file-list"></div>
+		</form>
+	</div>
+
+</body>
+</html>
