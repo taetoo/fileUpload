@@ -1,3 +1,12 @@
+// document.getElementById('bizFile').addEventListener('change', function(){
+// 	var filename = document.getElementById('fileName');
+// 	if(this.files[0] == undefined){
+// 		filename.innerText = '';
+// 		return;
+// 	}
+// 	filename.innerText = this.files[0].name;
+// });
+
 
 var fileNo = 0;
 var filesArr = new Array();
@@ -40,6 +49,9 @@ function addFile(obj){
     document.querySelector("input[type=file]").value = "";
 }
 
+
+
+
 /* 첨부파일 검증 */
 function validation(obj){
     // const fileTypes = ['application/vnd.ms-excel','Excel Workbook/xlsx'];
@@ -52,7 +64,17 @@ function validation(obj){
     } else if (obj.name.lastIndexOf('.') == -1) {
         alert("확장자가 없는 파일은 제외되었습니다.");
         return false;
-    } else {
+    } 
+	else if(fileNo != 0) {
+		for(var i = 0; i < filesArr.length; i++ ){
+		if(filesArr[i].name == obj.name){
+			alert("중복")
+			return false;
+		} 
+		}
+		return true;
+	} 
+	else {
         return true;
     }
 }
@@ -99,37 +121,37 @@ function submitForm() {
         }
     })
 }
-$(function(){	
-		$("#btn").on("click", function(){
-			console.log("click Time : " + new Date);
+// $(function(){	
+// 		$("#btn").on("click", function(){
+// 			console.log("click Time : " + new Date);
 			
-			var form = $("#fileForm")[0];
-			var formData = new FormData(form);
-			$.ajax({
-				type: "POST",
-				enctype: 'multipart/form-data',
-				url: "/excel/upload",
-				data: formData,
-				processData: false,
-				contentType: false,
-				cache: false,
-				xhr: function(){
-					var xhr = $.ajaxSettings.xhr();
-					xhr.upload.onprogress = function(e){
-						var per = e.loaded * 100 / e.total;
-						progressBar(per);
-					};
-					return xhr;
-				},
-				success: function (data) {
-					console.log("SUCCESS : ", data);
-				},
-				error: function (e) {
-					console.log("ERROR : ", e);
-				}
-			});
-		});
-	});
+// 			var form = $("#fileForm")[0];
+// 			var formData = new FormData(form);
+// 			$.ajax({
+// 				type: "POST",
+// 				enctype: 'multipart/form-data',
+// 				url: "/excel/upload",
+// 				data: formData,
+// 				processData: false,
+// 				contentType: false,
+// 				cache: false,
+// 				xhr: function(){
+// 					var xhr = $.ajaxSettings.xhr();
+// 					xhr.upload.onprogress = function(e){
+// 						var per = e.loaded * 100 / e.total;
+// 						progressBar(per);
+// 					};
+// 					return xhr;
+// 				},
+// 				success: function (data) {
+// 					console.log("SUCCESS : ", data);
+// 				},
+// 				error: function (e) {
+// 					console.log("ERROR : ", e);
+// 				}
+// 			});
+// 		});
+// 	});
 	
 	function progressBar(per){
 		if(per > 55){

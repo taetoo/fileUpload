@@ -57,3 +57,23 @@
 	.progressTotal{background: #5D5D5D;border-radius: 10px;}
 	.progressNow{width: calc(0% - 20px);background: #FFF;border-radius: 10px;}
 	.progressPer{background: transparent; text-align:center;color:#A6A6A6;}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
