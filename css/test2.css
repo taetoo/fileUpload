@@ -28,12 +28,14 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 .insert .file-list {
     height: 200px;
     overflow: auto;
     border: 1px solid #989898;
     padding: 10px;
+    border-radius: 8px;
 }
 .insert .file-list .filebox p {
     font-size: 14px;
@@ -43,6 +45,7 @@
 .insert .file-list .filebox .delete i{
     color: #ff5353;
     margin-left: 5px;
+    
 }
 .progress-top {
     display: none;

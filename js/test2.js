@@ -7,7 +7,7 @@
 // 	filename.innerText = this.files[0].name;
 // });
 
-
+var fileCount = 0;
 var fileNo = 0;
 var filesArr = new Array();
 
@@ -36,7 +36,7 @@ function addFile(obj){
                 let htmlData = '';
                 htmlData += '<div id="file' + fileNo + '" class="filebox">';
                 htmlData += '   <p class="name">' + file.name + '</p>';
-                htmlData += '   <a class="delete" onclick="deleteFile(' + fileNo + ');"><i class="far fa-minus-square"></i></a>';
+                htmlData += '   <a id="file" class="delete" onclick="deleteFile(' + fileNo + ');"><i class="fas fa-minus-square"></i></a>';
                 htmlData += '</div>';
                 $('.file-list').append(htmlData);
                 fileNo++;
@@ -70,8 +70,8 @@ function validation(obj){
 		if(filesArr[i].name == obj.name){
 			alert("중복")
 			return false;
-		} 
-		}
+		}   
+	    }
 		return true;
 	} 
 	else {
@@ -81,9 +81,12 @@ function validation(obj){
 
 /* 첨부파일 삭제 */
 function deleteFile(num) {
-    document.querySelector("#file" + num).remove();
+    $('#file' + num).remove();
     filesArr[num].is_delete = true;
+
 }
+
+
 
 /* 폼 전송 */
 function submitForm() {

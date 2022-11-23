@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
@@ -23,10 +23,10 @@
 		<form method="POST" action="/excel/upload" onsubmit="return false;" enctype="multipart/form-data">
 			<!-- <input type="file" onchange="addFile(this);" multiple accept=".xls,.xlsx" />
 			<input type="submit" class="submit" value="send" onchange="submitForm(this)"> -->
-			<span class="btn btn-default btn-file">
-                파일추가 <input type="file" onchange="addFile(this);" multiple accept=".xls,.xlsx" id="file">
+			<span class="btn btn-default btn-file" style="margin-bottom:20px; margin-right: 10px" >
+                파일추가 <input type="file" id="file-input" onchange="addFile(this);" multiple accept=".xls,.xlsx" id="file">
             </span>
-            <span class="btn btn-default btn-file" >
+            <span class="btn btn-default btn-file" style="margin-bottom:20px" >
                 Send <input type="submit" style="display:none" value="send" onchange="submitForm(this)">
             </span>
 			<div class="file-list"></div>
