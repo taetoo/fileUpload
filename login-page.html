@@ -25,20 +25,18 @@
 		<!-- 로고아이콘 -->
 		<a><img class="logo_image" src="./images/main-logo.png"></a>
 	</div>
-    <div class="login-title">
-        <h2>통합코드 생성 시스템<h2>
-    </div>
     <div class="login-form">
-    <form action="/user/login" method="post">
-        <div class="login-id-label">ID</div>
-        <input type="text" name="username" class="login-input-box" required="required" autofocus="autofocus"
-               autocomplete="off">
-
-        <div class="login-id-label">Password</div>
-        <input type="password" name="password" class="login-input-box" required="required"><br><br>
-
-        <button id="login-id-submit">Login</button>
-    </form>
+        <div class="login-title"><h3>통합코드 생성 시스템 로그인<h2></div><br>
+        <div class="login-input">
+            <form action="/user/login" method="post">
+                <div class="login-id-label">ID</div>
+                <input type="text" name="username" class="login-input-box" required="required" autofocus="autofocus"
+                    autocomplete="off">
+                <div class="login-id-label">Password</div>
+                <input type="password" name="password" class="login-input-box" required="required"><br><br>
+                <button id="login-id-submit">Login</button>
+            </form>
+        </div>    
     <div id="login-failed" style="display:none" class="alert alert-danger" role="alert">ID or PW 를 확인해주세요.</div>
 </div>
 </body>

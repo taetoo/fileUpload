@@ -1,8 +1,8 @@
 .navbar_logo {
+    display: flex;
     font-size: 24px;
     color: white;
     padding-top: 100px;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -12,14 +12,24 @@
     /* padding: 5px 10px; */
 }
 
+.login-form {
+    /* display: flex; */
+    width: 250px;
+    margin: 5vh auto;
+    height: 35vh;
+    border: 10px solid #dbdbdb;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
 .login-title {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-input {
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }

@@ -18,6 +18,7 @@ function addFile(obj){
     var remainFileCnt = maxFileCnt - attFileCnt;    // 추가로 첨부가능한 개수
     var curFileCnt = obj.files.length;  // 현재 선택된 첨부파일 개수
 
+
     // 첨부파일 개수 확인
     if (curFileCnt > remainFileCnt) {
         alert("첨부파일은 최대 " + maxFileCnt + "개 까지 첨부 가능합니다.");
@@ -36,7 +37,7 @@ function addFile(obj){
                 let htmlData = '';
                 htmlData += '<div id="file' + fileNo + '" class="filebox">';
                 htmlData += '   <p class="name">' + file.name + '</p>';
-                htmlData += '   <a id="file" class="delete" onclick="deleteFile(' + fileNo + ');"><i class="fas fa-minus-square"></i></a>';
+                htmlData += '   <a id="file+fileNo" class="delete" onclick="deleteFile(' + fileNo + ');"><i class="fas fa-minus-square"></i></a>';
                 htmlData += '</div>';
                 $('.file-list').append(htmlData);
                 fileNo++;
@@ -68,7 +69,7 @@ function validation(obj){
 	else if(fileNo != 0) {
 		for(var i = 0; i < filesArr.length; i++ ){
 		if(filesArr[i].name == obj.name){
-			alert("중복")
+			alert("중복된 파일입니다.")
 			return false;
 		}   
 	    }
@@ -81,12 +82,15 @@ function validation(obj){
 
 /* 첨부파일 삭제 */
 function deleteFile(num) {
+    fileNo = num;
+    fileNo--;
     $('#file' + num).remove();
-    filesArr[num].is_delete = true;
+    var copyFilesArr = [...filesArr];
+    copyFilesArr.splice(num, 1);
+    filesArr = [...copyFilesArr];
 
+    
 }
-
-
 
 /* 폼 전송 */
 function submitForm() {
@@ -95,9 +99,7 @@ function submitForm() {
     var formData = new FormData(form);
     for (var i = 0; i < filesArr.length; i++) {
         // 삭제되지 않은 파일만 폼데이터에 담기
-        if (!filesArr[i].is_delete) {
-            formData.append("attach_file", filesArr[i]);
-        }
+        formData.append("attach_file", filesArr[i]);
     }
 
     $.ajax({
