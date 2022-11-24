@@ -1,12 +1,3 @@
-// document.getElementById('bizFile').addEventListener('change', function(){
-// 	var filename = document.getElementById('fileName');
-// 	if(this.files[0] == undefined){
-// 		filename.innerText = '';
-// 		return;
-// 	}
-// 	filename.innerText = this.files[0].name;
-// });
-
 let fileCount = 0;
 let fileNo = 0;
 let filesArr = new Map();
@@ -90,8 +81,6 @@ function submitForm() {
     for (var value of filesArr.values()) {
         // 삭제되지 않은 파일만 폼데이터에 담기
         formData.append("attach_file", value);
-
-
     }
 
     $.ajax({
