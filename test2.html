@@ -21,11 +21,11 @@
 </h1>
 	<div class="insert">
 		<form method="POST" action="/excel/upload" onsubmit="return false;" enctype="multipart/form-data">
-			<!-- <input type="file" onchange="addFile(this);" multiple accept=".xls,.xlsx" />
-			<input type="submit" class="submit" value="send" onchange="submitForm(this)"> -->
-			<span class="btn btn-default btn-file" style="margin-bottom:20px; margin-right: 10px" >
+			<span class="btn btn-default btn-file" id="file-upload" >
                 파일추가 <input type="file" id="file-input" onchange="addFile(this);" multiple accept=".xls,.xlsx" id="file">
             </span>
+			<div class="notice-message">파일은 최대 4개까지 첨부 가능합니다.</div>
+			
             <span class="btn btn-default btn-file" style="margin-bottom:20px" >
                 Send <input type="submit" style="display:none" value="send" onchange="submitForm(this)">
             </span>
